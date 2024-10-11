@@ -1,4 +1,6 @@
 import Checklist from '@/components/Checklist'
+import AvatarTooltip from '../../images/components/avatar/AvatarTooltip.png'
+import AvatarContraste from '../../images/components/avatar/AvatarContraste.png'
 
 export const metadata = {
   title: 'Avatar',
@@ -25,11 +27,27 @@ export const metadata = {
     - Implementar `aria-hidden` para avatares decorativos ou `alt` para descritivos.
   </Col>
   <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
+  ```bash {{ title: 'Acessibilidade no Desenvolvimento - Avatar Icônico' }}
+      <br-avatar 
+        name="Jhon Doe"
+        density="small"
+        aria-hidden="true">
+      </br-avatar>
+    ```
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento - Avatar Fotográfico' }}
+      <br-avatar
+        name="Jhon Doe"
+        image="https://picsum.photos/id/823/400"
+        alt="Avatar de Jhon Doe">
+      </br-avatar>
+    ```
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento - Avatar com Tooltip' }}
+      <br-avatar
+        name="Jhon Doe"
+        tooltip-text="Avatar de Jhon Doe"
+        tooltip-place="right"
+        alt="Avatar de Jhon Doe">
+      </br-avatar>
     ```
   </Col>
 
@@ -42,7 +60,7 @@ export const metadata = {
   </Col>
   <Col>
     <ImageNote
-          imageSrc="https://placehold.co/600x200.png"
+          imageSrc={AvatarTooltip}
           imageAlt="Acessibilidade no Design"
         />
   </Col>
@@ -51,7 +69,7 @@ export const metadata = {
   </Col>
   <Col>
     <ImageNote
-          imageSrc="https://placehold.co/600x200.png"
+          imageSrc={AvatarContraste}
           imageAlt="Acessibilidade no Design"
         />
   </Col>

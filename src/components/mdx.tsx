@@ -113,7 +113,7 @@ export function Property({
   return (
     <li className="m-0 px-0 py-4 first:pt-0 last:pb-0">
       <dl className="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
-      {type && (
+        {type && (
           <>
             <dt className="sr-only">Type</dt>
             <dd className="font-mono text-xs font-semibold text-blue-700 dark:text-blue-400">
@@ -125,7 +125,7 @@ export function Property({
         <dd>
           <code className='bg-transparent'>{name}</code>
         </dd>
-        
+
         <dt className="sr-only">Description</dt>
         <dd className="w-full flex-none [&>:first-child]:mt-0 [&>:last-child]:mb-0">
           {children}
@@ -143,13 +143,13 @@ export function ImageNote({
   imageAlt?: string
 }) {
   return (
-      <Image
-        src={imageSrc || 'https://placehold.co/600x400.png'}
-        alt={imageAlt || 'Note image'}
-        width={100}  // Adjust the width as needed
-        height={100} // Adjust the height as needed
-        className="w-full rounded-2xl border border-blue-500/20 bg-blue-50/50 dark:border-blue-500/30 dark:bg-blue-500/5 dark:text-blue-200 dark:[--tw-prose-links-hover:theme(colors.blue.300)] dark:[--tw-prose-links:theme(colors.white)]"  // Add margin or styling as needed
-      />
+    <Image
+      src={imageSrc || 'https://placehold.co/600x200.png'}
+      alt={imageAlt || 'Note image'}
+      width={600}  // Adjust the width as needed
+      height={200} // Adjust the height as needed
+      className="w-full rounded-2xl border border-blue-500/20 bg-blue-50/50 dark:border-blue-500/30 dark:bg-blue-500/5 dark:text-blue-200 dark:[--tw-prose-links-hover:theme(colors.blue.300)] dark:[--tw-prose-links:theme(colors.white)]"  // Add margin or styling as needed
+    />
   )
 }
 
