@@ -1,0 +1,58 @@
+import Checklist from '@/components/Checklist'
+
+export const metadata = {
+  title: 'Checkbox',
+  description:
+    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+}
+
+# Checkbox
+
+## Critérios WCAG e eMAG
+<Properties fullWidth>
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros">
+    Cada caixa de seleção deve estar associada a um rótulo visível que descreva sua função. Use `label for` corretamente.
+  </Property>
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
+    O checkbox deve ser navegável via teclado e indicar claramente quando está em foco.
+      </Property>
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Contraste de cores e foco visível">
+    O foco na caixa de seleção e o contraste entre o estado marcado e não marcado devem ser claros e visíveis para todos os usuários.
+      </Property>
+</Properties>
+
+
+## Desenvolvimento
+<Row>
+  <Col>
+    - Implementar rótulos de forma que estejam associados corretamente à caixa de seleção e garantir suporte completo para navegação por teclado.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+
+</Row>
+
+## Design
+<Row>
+  <Col>
+  - Criar rótulos visíveis e garantir que o foco seja facilmente identificado.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+</Row>
+
+### Checklist
+<Checklist>
+Implementar rótulos de forma que estejam associados corretamente à caixa de seleção e garantir suporte completo para navegação por teclado.
+Criar rótulos visíveis e garantir que o foco seja facilmente identificado.
+</Checklist>

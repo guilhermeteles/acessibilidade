@@ -1,0 +1,54 @@
+import Checklist from '@/components/Checklist'
+
+export const metadata = {
+  title: 'Card',
+  description:
+    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+}
+
+# Card
+
+## Critérios WCAG e eMAG
+<Properties fullWidth>
+  <Property name="WCAG 1.3.1 / eMAG Diretriz 6" type="Estrutura e rótulos claros">
+    Certifique-se de que o conteúdo dentro de um Card esteja bem estruturado e tenha rótulos claros, especialmente se incluir botões ou links.
+     </Property>
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de cores">
+    O contraste entre o fundo do Card e o texto deve ser suficiente para garantir legibilidade.
+    </Property>
+</Properties>
+
+
+## Desenvolvimento
+<Row>
+  <Col>
+    - Implementar rótulos adequados e verificação de contraste.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+</Row>
+
+## Design
+<Row>
+  <Col>
+  - Garantir que os rótulos e estrutura visual sejam claros e legíveis.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+</Row>
+
+### Checklist
+<Checklist>
+Implementar rótulos adequados e verificação de contraste.
+Garantir que os rótulos e estrutura visual sejam claros e legíveis.
+</Checklist>

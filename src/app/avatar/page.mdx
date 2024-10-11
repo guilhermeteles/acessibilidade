@@ -1,0 +1,65 @@
+import Checklist from '@/components/Checklist'
+
+export const metadata = {
+  title: 'Avatar',
+  description:
+    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+}
+
+# Avatar
+
+## Critérios WCAG e eMAG
+<Properties fullWidth>
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Texto alternativo">
+    O Avatar deve ter texto alternativo descritivo `alt` caso seja mais que decorativo (por exemplo, o nome do usuário). Se for puramente decorativo, use `aria-hidden="true"`. 
+  </Property>
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de cores">
+    Se o Avatar incluir texto, o contraste entre o texto e o fundo deve atender aos requisitos de contraste.
+  </Property>
+</Properties>
+
+
+## Desenvolvimento
+<Row>
+  <Col>
+    - Implementar `aria-hidden` para avatares decorativos ou `alt` para descritivos.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+
+</Row>
+
+## Design
+<Row>
+  <Col>
+  - Garantir que o Avatar tenha texto alternativo adequado ou seja marcado como decorativo.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+  <Col>
+  - Verificar contraste para avatares com texto.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+</Row>
+
+### Checklist
+<Checklist>
+Implementar aria-hidden para avatares decorativos ou alt para descritivos.
+Garantir que o Avatar tenha texto alternativo adequado ou seja marcado como decorativo.
+Verificar contraste para avatares com texto.
+</Checklist>

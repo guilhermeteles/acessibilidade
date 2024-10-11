@@ -1,0 +1,86 @@
+import Checklist from '@/components/Checklist'
+
+export const metadata = {
+  title: 'Collapse',
+  description:
+    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+}
+
+# Collapse
+
+## Critérios WCAG e eMAG
+<Properties fullWidth>
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Alternativas de texto para conteúdo não textual">
+    Verifique se o ícone de colapso/expansão tem um texto alternativo apropriado (ex.: através de `aria-label` ou `aria-expanded`) para que leitores de tela possam identificar a ação associada ao ícone.
+      </Property>
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegação por teclado">
+    Garanta que o componente seja navegável via teclado. O botão de colapso/expansão deve ser acessível utilizando apenas o teclado, e o estado de foco deve ser visível quando o usuário estiver interagindo com o componente.
+  </Property>
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
+    Adicione estilos visíveis para indicar o foco nos elementos interativos (botões de colapso). Isso garante que usuários de teclado saibam qual parte do componente está ativa.
+  </Property>
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Uso de cores adequadas">
+    O contraste entre o botão de colapso/expansão e o fundo deve atender à relação mínima de contraste (4.5:1). Isso também vale para o conteúdo expandido.
+  </Property>
+  <Property name="WCAG 3.3.2 / eMAG Diretriz 6" type="Rótulos para campos e descrições">
+    Certifique-se de que o colapso tenha rótulos claros e descrições adequadas para explicar o que será expandido/colapsado.
+  </Property>
+</Properties>
+
+
+## Desenvolvimento
+<Row>
+  <Col>
+    - Implementar suporte a `aria-expanded` e `aria-controls` para melhorar a acessibilidade dos leitores de tela.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+  <Col>
+    - Garantir que todos os estados de foco e navegação por teclado estejam funcionando adequadamente.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+</Row>
+
+## Design
+<Row>
+  <Col>
+  - Definir ícones com alto contraste e fornecer descrições claras (por exemplo, usar `aria-label` no botão de colapso).
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+   <Col>
+  - Garantir que as cores do componente tenham contraste adequado.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+</Row>
+
+### Checklist
+<Checklist>
+Implementar suporte a aria-expanded e aria-controls para melhorar a acessibilidade dos leitores de tela.
+Garantir que todos os estados de foco e navegação por teclado estejam funcionando adequadamente.
+Definir ícones com alto contraste e fornecer descrições claras (por exemplo, usar aria-label no botão de colapso).
+Garantir que as cores do componente tenham contraste adequado.
+
+</Checklist>

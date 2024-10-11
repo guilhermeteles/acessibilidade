@@ -1,0 +1,59 @@
+import Checklist from '@/components/Checklist'
+
+export const metadata = {
+  title: 'Button',
+  description:
+    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+}
+
+# Button
+
+## Critérios WCAG e eMAG
+<Properties fullWidth>
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Controles acessíveis e rótulosControles acessíveis e rótulos">
+    O Carousel deve ser navegável via teclado, com controles de navegação claramente rotulados (por exemplo, `aria-label="Próximo slide"`).
+  </Property>
+  <Property name="WCAG 2.2.2 / eMAG Diretriz 9" type="Evitar animações automáticas">
+    Evite a rotação automática dos slides, ou forneça um controle para pausar ou parar a animação.
+      </Property>
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
+    O foco deve ser visível nos controles do Carousel.
+  </Property>
+
+</Properties>
+
+
+## Desenvolvimento
+<Row>
+  <Col>
+    - Implementar navegação por teclado e controle de animação acessível.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+</Row>
+
+## Design
+<Row>
+  <Col>
+  - Definir um layout que facilite o controle e a navegação do Carousel.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+</Row>
+
+### Checklist
+<Checklist>
+Implementar navegação por teclado e feedback visual adequado para focos e interações com o botão.
+Definir cores e contrastes adequados para botões.
+Garantir que todos os estados (hover, focus, active) sejam visíveis e claros.
+</Checklist>

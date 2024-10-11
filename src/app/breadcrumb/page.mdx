@@ -1,0 +1,72 @@
+import Checklist from '@/components/Checklist'
+
+export const metadata = {
+  title: 'Breadcrumb',
+  description:
+    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+}
+
+# Breadcrumb
+
+## Critérios WCAG e eMAG
+<Properties fullWidth>
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
+    O Breadcrumb deve ser completamente navegável via teclado, com cada link representando claramente sua posição na trilha.
+  </Property>
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
+    Quando os itens do Breadcrumb são focados, deve haver um indicador visual claro que o link está ativo (ex.: mudança de cor, borda, etc.).
+  </Property>
+  <Property name="WCAG 2.4.4 / eMAG Diretriz 6" type="Texto descritivo">
+    Os links devem ter textos claros e descritivos, explicando claramente para onde levam. Se o último item não for clicável (indica a página atual), ele deve ser devidamente marcado como tal (com `aria-current="page"`).
+  </Property>
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de cores">
+    Certifique-se de que o texto do Breadcrumb tenha contraste adequado com o fundo (mínimo 4.5:1) para garantir sua legibilidade.
+  </Property>
+</Properties>
+
+
+## Desenvolvimento
+<Row>
+  <Col>
+    - Implementar navegação por teclado e uso correto de `aria-current` para a página atual.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+  <Col>
+    - Garantir que os links sejam claramente legíveis e navegáveis para usuários com tecnologias assistivas.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+</Row>
+
+## Design
+<Row>
+  <Col>
+  - Garantir que a hierarquia dos links esteja claramente visível e que os itens focados sejam fáceis de identificar visualmente.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+</Row>
+
+### Checklist
+<Checklist>
+Implementar navegação por teclado e uso correto de aria-current para a página atual.
+Garantir que os links sejam claramente legíveis e navegáveis para usuários com tecnologias assistivas.
+Garantir que a hierarquia dos links esteja claramente visível e que os itens focados sejam fáceis de identificar visualmente.
+</Checklist>
