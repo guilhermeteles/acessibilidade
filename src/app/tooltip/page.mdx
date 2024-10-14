@@ -10,14 +10,17 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Exibição com teclado">
+    O tooltip deve ser acessível via teclado, ou seja, deve aparecer quando o elemento é focado (não apenas no `hover` do mouse). Deve ser possível exibir a dica de ferramenta com teclas como `Tab` ou `Enter`.
   </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Texto alternativo descritivo">
+    O conteúdo do tooltip deve ser acessível para leitores de tela. Utilize `aria-describedby` para garantir que o tooltip seja lido junto com o elemento que ele descreve.
   </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
+  <Property name="WCAG 2.2.1 / eMAG Diretriz 4" type="Tempo de exibição">
+   Certifique-se de que o tooltip permaneça visível tempo suficiente para que o usuário possa lê-lo, ou que ele possa ser controlado (por exemplo, manter visível enquanto o foco está no elemento).
+  </Property>
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Contraste adequado">
+    O texto dentro do tooltip deve ter contraste adequado em relação ao fundo.
   </Property>
 </Properties>
 
@@ -25,7 +28,7 @@ export const metadata = {
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
+    - Implementar `aria-describedby` para garantir que o conteúdo do tooltip seja acessível para leitores de tela.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -36,7 +39,7 @@ export const metadata = {
     ```
   </Col>
   <Col>
-    - Garantir navegação por teclado com foco visível.
+    - Garantir que o tooltip seja exibido com foco no teclado e permaneça visível enquanto necessário.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -51,7 +54,7 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
+  - Garantir que o tooltip tenha contraste suficiente e que seja exibido de forma clara, sem desaparecer rapidamente.
   </Col>
   <Col>
     <ImageNote
@@ -63,7 +66,7 @@ export const metadata = {
 
 ### Checklist
 <Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
+Implementar aria-describedby para garantir que o conteúdo do tooltip seja acessível para leitores de tela.
+Garantir que o tooltip seja exibido com foco no teclado e permaneça visível enquanto necessário.
+Garantir que o tooltip tenha contraste suficiente e que seja exibido de forma clara, sem desaparecer rapidamente.
 </Checklist>

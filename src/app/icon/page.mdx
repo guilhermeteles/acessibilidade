@@ -10,14 +10,14 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Alternativas de texto">
+    Os ícones devem ter uma alternativa de texto apropriada para que leitores de tela possam descrever sua função. Isso pode ser feito com `aria-label` ou `aria-hidden="true"` se o ícone for puramente decorativo e não tiver uma função interativa.
   </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de cores">
+    O ícone deve ter contraste suficiente em relação ao fundo para ser legível por todos os usuários, especialmente para pessoas com baixa visão.
   </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Foco visível em ícones interativos">
+    Se o ícone for clicável ou interativo, deve haver um foco visual claro quando o ícone for selecionado ou ativado pelo teclado.
   </Property>
 </Properties>
 
@@ -25,7 +25,7 @@ export const metadata = {
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
+    - Implementar textos alternativos adequados para ícones com `aria-label`, e usar `aria-hidden="true"` para ícones puramente decorativos.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -36,7 +36,7 @@ export const metadata = {
     ```
   </Col>
   <Col>
-    - Garantir navegação por teclado com foco visível.
+    - Verificar contraste e foco visual para ícones interativos.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -51,7 +51,7 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
+  - Definir ícones com propósito claro, garantindo que sejam visíveis e legíveis em diferentes tamanhos e contextos.
   </Col>
   <Col>
     <ImageNote
@@ -63,7 +63,7 @@ export const metadata = {
 
 ### Checklist
 <Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
+Implementar textos alternativos adequados para ícones com aria-label, e usar aria-hidden="true" para ícones puramente decorativos.
+Verificar contraste e foco visual para ícones interativos.
+Definir ícones com propósito claro, garantindo que sejam visíveis e legíveis em diferentes tamanhos e contextos.
 </Checklist>

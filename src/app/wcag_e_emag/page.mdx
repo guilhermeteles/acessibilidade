@@ -8,62 +8,27 @@ export const metadata = {
 
 # WCAG e Emag
 
-## Critérios WCAG e eMAG
-<Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
-  </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
-  </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
-  </Property>
-</Properties>
+## WCAG (Diretrizes de Acessibilidade para Conteúdo Web)
+Publicado pelo W3C, o WCAG (Web Content Accessibility Guidelines) define as melhores práticas para tornar o conteúdo web acessível. Ele está organizado em quatro princípios:
 
+- Perceptível: qualquer usuário pode perceber;
+- Operável: qualquer usuário pode utilizar;
+- Compreensível: qualquer usuário pode entender
+- Robusto: pode ser utilizável em qualquer plataforma ou tecnologia assistiva.
 
-## Desenvolvimento
-<Row>
-  <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
-  </Col>
-  <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-  </Col>
-  <Col>
-    - Garantir navegação por teclado com foco visível.
-  </Col>
-  <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-  </Col>
-</Row>
+As WCAG são divididas em três níveis de conformidade:
 
-## Design
-<Row>
-  <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
-  </Col>
-  <Col>
-    <ImageNote
-          imageSrc="https://placehold.co/600x200.png"
-          imageAlt="Acessibilidade no Design"
-        />
-  </Col>
-</Row>
+- Nível A: Requisitos básicos de acessibilidade (mínimo).
+- Nível AA: Inclui todos os critérios do Nível A e outros, focando em usabilidade para uma gama mais ampla de pessoas.
+- Nível AAA: O nível mais alto, com padrões mais rigorosos, mas difíceis de implementar universalmente.
 
-### Checklist
-<Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
-</Checklist>
+## eMAG (Modelo de Acessibilidade em Governo Eletrônico)
+O eMAG é o modelo brasileiro de acessibilidade digital, criado para facilitar a implementação de acessibilidade em sites e serviços digitais do governo. Ele adapta as diretrizes internacionais da WCAG ao contexto brasileiro, especialmente no que se refere à legislação e demandas do setor público.
+
+## A Importância de WCAG e eMAG
+- Inclusão social e digital
+Seguir as diretrizes WCAG e eMAG garante que um número maior de pessoas, incluindo aquelas com deficiências visuais, auditivas, motoras e cognitivas, possam usar os produtos e serviços digitais.
+- Conformidade legal
+No Brasil, temos o Decreto nº 5.296/2004 e a Lei Brasileira de Inclusão (LBI) – Lei nº 13.146/2015, que exigem que websites sejam acessíveis para todos os cidadãos. Não atender a esses critérios pode levar a penalidades jurídicas.
+- Benefícios para o negócio
+Além de cumprir a legislação, seguir WCAG e eMAG melhora a experiência de todos os usuários, aumenta o alcance da marca e reforça a responsabilidade social da empresa. Plataformas acessíveis podem atrair um público mais diversificado.

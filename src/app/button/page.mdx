@@ -10,30 +10,82 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Controles acessíveis e rótulosControles acessíveis e rótulos">
-    O Carousel deve ser navegável via teclado, com controles de navegação claramente rotulados (por exemplo, `aria-label="Próximo slide"`).
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos acessíveis para botões">
+    Todo botão deve ter um rótulo claro, visível ou através de `aria-label`, que descreva sua função.
   </Property>
-  <Property name="WCAG 2.2.2 / eMAG Diretriz 9" type="Evitar animações automáticas">
-    Evite a rotação automática dos slides, ou forneça um controle para pausar ou parar a animação.
-      </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser visível nos controles do Carousel.
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
+    O botão deve ser operável usando o teclado, com foco claro e visível para os usuários que navegam sem mouse.
   </Property>
-
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de cores">
+    O botão deve ter contraste adequado entre o texto e o fundo para garantir legibilidade. Verifique a relação de contraste mínima de `4.5:1`.
+  </Property>
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Feedback visual">
+    Deve haver uma clara distinção visual quando o botão está focado ou ativo.
+  </Property>
 </Properties>
 
 
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar navegação por teclado e controle de animação acessível.
+    - Implementar navegação por teclado e feedback visual adequado para focos e interações com o botão.
   </Col>
   <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
+    ```bash {{ title: 'Primary' }}
+    <br-button icon label="Primary" type="primary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Secondary' }}
+    <br-button icon label="Secondary" type="secondary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Tertiary' }}
+    <br-button icon label="Tertiary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Circle' }}
+    <br-button circle icon="trash" type="primary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Loading' }}
+    <br-button loading type="secondary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Inverted' }}
+    <br-button inverted icon label="Inverted" type="secondary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Icon and Label' }}
+    <br-button icon="city" label="Text" type="secondary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Icon and Circle' }}
+    <br-button circle icon="city" type="secondary"></br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Icon and Circle External' }}
+    <br-button circle icon="city" type="secondary">
+      <br-icon-base icon-name="user"></br-icon-base>
+    </br-button>
+    ```
+  </Col>
+  <Col>
+    ```bash {{ title: 'Com Tooltip' }}
+    <br-button
+      icon
+      label="Botão com tooltip"
+      type="primary"
+      tooltip-text="Lorem ipsum dolor sit amet."
+      tooltip-type="warning"
+    ></br-button>
     ```
   </Col>
 </Row>
@@ -41,7 +93,16 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Definir um layout que facilite o controle e a navegação do Carousel.
+  - Definir cores e contrastes adequados para botões.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+  <Col>
+  - Garantir que todos os estados (hover, focus, active) sejam visíveis e claros.
   </Col>
   <Col>
     <ImageNote

@@ -10,14 +10,11 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
+  <Property name="WCAG 1.4.1 / eMAG Diretriz 3" type="Uso sem dependência exclusiva de cores">
+    O divisor deve ser usado como um elemento de separação visual, mas sem depender exclusivamente da cor para transmitir sua função. Se o divisor for importante para a estrutura ou navegação, pode ser útil incluir um rótulo ou descrição adicional.
   </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
-  </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de cores">
+    O divisor deve ter contraste adequado com o fundo para garantir que seja visível, especialmente para usuários com baixa visão. Certifique-se de que o divisor se destaca, mas não prejudique a legibilidade de outros elementos ao redor.
   </Property>
 </Properties>
 
@@ -25,18 +22,7 @@ export const metadata = {
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
-  </Col>
-  <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-  </Col>
-  <Col>
-    - Garantir navegação por teclado com foco visível.
+    - Verificar se o divisor tem contraste suficiente com o fundo para garantir sua visibilidade, especialmente em temas de alto contraste.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -51,7 +37,7 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
+  - Definir o divisor de forma que sua função seja visualmente clara, mesmo para usuários com deficiência visual.
   </Col>
   <Col>
     <ImageNote
@@ -63,7 +49,6 @@ export const metadata = {
 
 ### Checklist
 <Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
+Verificar se o divisor tem contraste suficiente com o fundo para garantir sua visibilidade, especialmente em temas de alto contraste.
+Definir o divisor de forma que sua função seja visualmente clara, mesmo para usuários com deficiência visual.
 </Checklist>

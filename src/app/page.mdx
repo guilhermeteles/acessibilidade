@@ -1,6 +1,5 @@
-import { Acessibilidade } from '@/components/Acessibilidade'
-import { Componentes } from '@/components/Componentes'
 import { HeroPattern } from '@/components/HeroPattern'
+
 
 export const metadata = {
   title: 'Guia de Boas Práticas em Acessibilidade Digital',
@@ -8,8 +7,8 @@ export const metadata = {
 }
 
 export const sections = [
-  { title: 'Acessibilidade', id: 'acessibilidade' },
-  { title: 'Componentes', id: 'componentes' },
+  { title: 'O que é acessibilidade?', id: 'o-que-e-acessibilidade-digital' },
+  { title: 'Por que é importante?', id: 'por-que-e-importante' },
 ]
 
 <HeroPattern />
@@ -23,21 +22,15 @@ Este guia tem como objetivo orientar a implementação de boas práticas de aces
 Com base nas principais diretrizes internacionais, como as WCAG (Web Content Accessibility Guidelines), e nas regulamentações brasileiras, como o eMAG (Modelo de Acessibilidade em Governo Eletrônico), este guia fornece instruções claras para a criação de experiências digitais acessíveis e eficazes. Ao seguir essas práticas, asseguramos conformidade com a legislação e, mais importante, promovemos a inclusão e cidadania digital, ampliando o alcance e a usabilidade das nossas plataformas para todos os públicos.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
-  <Button href="/quickstart" arrow="right">
+  <Button href="/accordion" arrow="right">
     <>Componentes</>
   </Button>
-
 </div>
 
 ## O que é acessibilidade digital? {{ anchor: true }}
-
 A acessibilidade digital é garantir que qualquer pessoa, independentemente de suas habilidades físicas, visuais, auditivas, cognitivas ou motoras, possa acessar e interagir com produtos digitais como sites, aplicativos e sistemas.
-<div className="not-prose">
-  <Button href="/sdks" variant="text" arrow="right">
-    <>Get your API key</>
-  </Button>
-</div>
 
-<Acessibilidade />
+## Por que é importante? {{ anchor: true }}
+Proporcionar acessibilidade digital não é apenas uma questão de inclusão, mas também de cumprimento de legislações e normas. Facilitar o acesso ao conteúdo digital para todos reflete um compromisso com a cidadania e amplia o alcance da nossa plataforma.
 
-<Componentes />
+

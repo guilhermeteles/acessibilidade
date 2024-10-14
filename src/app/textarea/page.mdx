@@ -10,14 +10,17 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
+  <Property name="WCAG 1.3.1 / 3.3.2 / eMAG Diretriz 6" type="Rótulos e instruções claras">
+    Cada área de texto deve ter um rótulo claro, visível e associado corretamente ao campo usando `label for`. Se necessário, forneça instruções sobre o que deve ser inserido na área de texto.
   </Property>
   <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
+    A área de texto deve ser totalmente navegável via teclado, com foco visível e claro quando o usuário interagir com o campo.
   </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
+  <Property name="WCAG 3.3.1 / eMAG Diretriz 6" type="Mensagens de erro">
+    Caso uma entrada inválida seja detectada, forneça mensagens de erro claras, indicando o problema e como corrigi-lo.
+  </Property>
+  <Property name="WCAG 1.4.4 / eMAG Diretriz 7" type="Redimensionamento acessível">
+    Garanta que a área de texto possa ser redimensionada sem perder a funcionalidade ou a visibilidade do conteúdo.
   </Property>
 </Properties>
 
@@ -25,7 +28,7 @@ export const metadata = {
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
+    - Garantir que o `label` esteja associado corretamente à área de texto.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -36,7 +39,18 @@ export const metadata = {
     ```
   </Col>
   <Col>
-    - Garantir navegação por teclado com foco visível.
+    - Implementar mensagens de erro claras e acessíveis.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+  <Col>
+    - Fornecer foco visível quando a área de texto estiver ativa.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -51,7 +65,7 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
+  - Certificar-se de que os rótulos e instruções sejam visíveis e acessíveis.
   </Col>
   <Col>
     <ImageNote
@@ -63,7 +77,8 @@ export const metadata = {
 
 ### Checklist
 <Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
+Garantir que o label esteja associado corretamente à área de texto.
+Implementar mensagens de erro claras e acessíveis.
+Fornecer foco visível quando a área de texto estiver ativa.
+Certificar-se de que os rótulos e instruções sejam visíveis e acessíveis.
 </Checklist>

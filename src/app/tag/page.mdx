@@ -10,14 +10,20 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Texto Alternativo e Rotulagem Clara">
+    A Tag deve ter um texto descritivo que explique claramente seu propósito. Se a tag for interativa (por exemplo, se puder ser removida ou clicada), deve ser fornecido um `aria-label` ou rótulo correspondente que descreva sua ação.
   </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
+  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por Teclado">
+    Caso a Tag seja interativa, ela deve ser acessível via teclado. O usuário deve poder navegar até a tag e, se aplicável, acionar sua função (ex.: remover) usando apenas o teclado.
   </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
+  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de Foco Visível">
+    Se a tag for interativa, seu estado de foco deve ser claramente visível, indicando quando o usuário está interagindo com ela via teclado.
+  </Property>
+  <Property name="WCAG 1.4.3 / eMAG Diretriz 7" type="Contraste de Cores">
+    O texto da tag, bem como o fundo e a borda, devem ter contraste suficiente em relação ao fundo da página para garantir legibilidade, especialmente para usuários com baixa visão. A relação mínima de contraste recomendada é 4.5:1.
+  </Property>
+  <Property name="WCAG 3.3.1 / eMAG Diretriz 6" type="Estado de Foco Visível">
+   Se a tag incluir um campo editável ou interativo (como a remoção de uma tag), deve fornecer feedback visual claro ao usuário (por exemplo, indicando que a tag foi removida ou selecionada com sucesso).
   </Property>
 </Properties>
 
@@ -25,7 +31,7 @@ export const metadata = {
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
+    - Implementar rótulos acessíveis com `aria-label` para tags interativas.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -36,7 +42,18 @@ export const metadata = {
     ```
   </Col>
   <Col>
-    - Garantir navegação por teclado com foco visível.
+    - Garantir a navegabilidade por teclado e feedback visual de foco.
+  </Col>
+  <Col>
+    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
+    curl -G https://api.protocol.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+  </Col>
+  <Col>
+    - Verificar se o contraste entre o texto da tag e o fundo atende às exigências de acessibilidade.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -51,7 +68,16 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
+  - Garantir que o texto da tag seja descritivo e tenha contraste suficiente com o fundo.
+  </Col>
+  <Col>
+    <ImageNote
+          imageSrc="https://placehold.co/600x200.png"
+          imageAlt="Acessibilidade no Design"
+        />
+  </Col>
+  <Col>
+  - Criar um estado de foco claro e visível para tags interativas.
   </Col>
   <Col>
     <ImageNote
@@ -63,7 +89,9 @@ export const metadata = {
 
 ### Checklist
 <Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
+Implementar rótulos acessíveis com aria-label para tags interativas.
+Garantir a navegabilidade por teclado e feedback visual de foco.
+Verificar se o contraste entre o texto da tag e o fundo atende às exigências de acessibilidade.
+Garantir que o texto da tag seja descritivo e tenha contraste suficiente com o fundo.
+Criar um estado de foco claro e visível para tags interativas.
 </Checklist>

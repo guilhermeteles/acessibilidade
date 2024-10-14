@@ -291,7 +291,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
       <ul role="list">
         <TopLevelNavItem href="/">Guia</TopLevelNavItem>
         <TopLevelNavItem href="#">Checklist</TopLevelNavItem>
-        <TopLevelNavItem href="#">Score</TopLevelNavItem>
+        <TopLevelNavItem href="/score">Score</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}

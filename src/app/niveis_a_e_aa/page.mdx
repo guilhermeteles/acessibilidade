@@ -8,62 +8,26 @@ export const metadata = {
 
 # Níveis A e AA
 
-## Critérios WCAG e eMAG
-<Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
-  </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
-  </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
-  </Property>
-</Properties>
+O e-Processo está focada em atender os critérios dos níveis A e AA das diretrizes WCAG e eMAG:
 
+## Critérios de Nível A (Básico)
+- O Nível A garante acessibilidade mínima, focando em:
+    - Alternativas de texto para imagens.
+    - Navegação apenas por teclado.
+    - Evitar conteúdo piscante que possa causar convulsões.
+- Público atendido:
+    - Usuários com deficiências visuais, motoras e auditivas moderadas.
+    - Usuários que dependem de leitores de tela ou navegação por teclado.
+- Público não atendido:
+    - Usuários com deficiências mais complexas ou que precisam de ajustes adicionais para usar a interface de forma fluida, como em áreas de contraste e adaptação ao redimensionamento do conteúdo.
 
-## Desenvolvimento
-<Row>
-  <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
-  </Col>
-  <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-  </Col>
-  <Col>
-    - Garantir navegação por teclado com foco visível.
-  </Col>
-  <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-  </Col>
-</Row>
-
-## Design
-<Row>
-  <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
-  </Col>
-  <Col>
-    <ImageNote
-          imageSrc="https://placehold.co/600x200.png"
-          imageAlt="Acessibilidade no Design"
-        />
-  </Col>
-</Row>
-
-### Checklist
-<Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
-</Checklist>
+## Critérios de Nível AA (Intermediário)
+- O Nível AA vai além do mínimo e atende a mais necessidades:
+  - Contraste de cores adequado para pessoas com baixa visão.
+  - Textos redimensionáveis sem perda de funcionalidade.
+  - Consistência na navegação e nos rótulos de formulários.
+- Público atendido:
+  - Usuários com deficiência visual que precisam de maior contraste.
+  - Usuários com deficiências motoras ou cognitivas moderadas que necessitam de instruções claras e consistência na navegação.
+- Público não atendido:
+  - Pessoas com deficiências severas, como limitações cognitivas complexas ou auditivas profundas, podem ainda encontrar barreiras sem os critérios de Nível AAA, que inclui legendas para todo conteúdo multimídia ao vivo, por exemplo.

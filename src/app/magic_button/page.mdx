@@ -10,14 +10,8 @@ export const metadata = {
 
 ## Critérios WCAG e eMAG
 <Properties fullWidth>
-  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rótulos claros e alternativos">
-    Cada seção de um Accordion deve ter um rótulo claro que descreva seu conteúdo. Utilize `aria-expanded` para indicar o estado de expansão ou contração e `aria-controls` para associar a seção ao conteúdo que será exibido.
-  </Property>
-  <Property name="WCAG 2.1.1 / eMAG Diretriz 5" type="Navegabilidade por teclado">
-    Certifique-se de que o Accordion seja navegável via teclado, permitindo que o usuário expanda ou contraia as seções com a tecla "Enter" ou "Espaço".
-  </Property>
-  <Property name="WCAG 2.4.7 / eMAG Diretriz 5" type="Estado de foco visível">
-    O foco deve ser claramente visível quando o Accordion é focado ou interagido, indicando qual parte do componente está ativa.
+  <Property name="WCAG 1.1.1 / eMAG Diretriz 3" type="Rotulagem clara">
+    Certifique-se de que o Magic Button tenha um rótulo claro e descritivo, especialmente se realizar uma ação importante.
   </Property>
 </Properties>
 
@@ -25,18 +19,7 @@ export const metadata = {
 ## Desenvolvimento
 <Row>
   <Col>
-    - Implementar `aria-expanded` para indicar o estado de cada seção.
-  </Col>
-  <Col>
-    ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-  </Col>
-  <Col>
-    - Garantir navegação por teclado com foco visível.
+    - Implementar `aria-label` para garantir acessibilidade.
   </Col>
   <Col>
     ```bash {{ title: 'Acessibilidade no Desenvolvimento' }}
@@ -51,7 +34,7 @@ export const metadata = {
 ## Design
 <Row>
   <Col>
-  - Garantir que os rótulos e estados sejam visíveis, com foco claro.
+  - Definir rótulos claros e foco visível.
   </Col>
   <Col>
     <ImageNote
@@ -63,7 +46,6 @@ export const metadata = {
 
 ### Checklist
 <Checklist>
-Implementar aria-expanded para indicar o estado de cada seção.
-Garantir navegação por teclado com foco visível.
-Garantir que os rótulos e estados sejam visíveis, com foco claro.
+Implementar aria-label para garantir acessibilidade.
+Definir rótulos claros e foco visível.
 </Checklist>
